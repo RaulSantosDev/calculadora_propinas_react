@@ -16,6 +16,7 @@ function App() {
             {
               menuItems.map( (item) => (
                 <MenuItem
+                  key={item.id}
                   item={item}
                 />
               ))
