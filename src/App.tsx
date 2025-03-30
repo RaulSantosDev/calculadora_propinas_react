@@ -1,9 +1,10 @@
 import MenuItem from "./components/MenuItem"
+import OrderContest from "./components/OrderContest"
 import { menuItems } from "./data/db"
 import useOrder from "./hooks/useOrder"
 
 function App() {
-  const {addItem} = useOrder()
+  const {order, addItem} = useOrder()
 
   return (
     <>
@@ -28,10 +29,11 @@ function App() {
           </div>       
         </div>  
 
-        <div>
-          <h1 className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
-            <p className="text-center font-black">La orden está vacía</p>
-          </h1>
+        <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
+          < OrderContest 
+            order={order}
+          />
+
         </div>
 
 
