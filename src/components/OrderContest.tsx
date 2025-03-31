@@ -1,9 +1,11 @@
-import { OrderItem } from '../types'
+import { OrderItem, MenuItem } from '../types'
+
 type OrderContestProps = {
     order: OrderItem[]
-}
+    removeItem: (id : MenuItem["id"]) => void
+  }
 
-const OrderContest = ({order} : OrderContestProps) => {
+const OrderContest = ({order, removeItem} : OrderContestProps) => {
   return (
     <div>
       <h1 className="text-center font-black text-4xl">Consumo</h1>
@@ -21,7 +23,10 @@ const OrderContest = ({order} : OrderContestProps) => {
                     <p className="font-black">Cantidad {item.quantity} - ${item.quantity * item.price}</p>
                   </div>
 
-                  <button className="bg-red-700 w-8 h-8 rounded-full font-black text-white cursor-pointer">
+                  <button 
+                    className="bg-red-700 w-8 h-8 rounded-full font-black text-white cursor-pointer"
+                    onClick={() => removeItem(item.id)}
+                  >
                       X
                   </button>
                 </div>
