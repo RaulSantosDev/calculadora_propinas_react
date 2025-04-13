@@ -3,9 +3,10 @@ import OrderContest from "./components/OrderContest"
 import { menuItems } from "./data/db"
 import useOrder from "./hooks/useOrder"
 import OrderTotals from "./components/OrderTotals"
+import TipPercentageForm from "./components/TipPercentageForm"
 
 function App() {
-  const {order, addItem, removeItem} = useOrder()
+  const {order, addItem, removeItem, tip, setTip} = useOrder()
 
   return (
     <>
@@ -18,15 +19,14 @@ function App() {
           <h1 className="text-center font-black text-4xl ">Menú</h1>   
           <div className="space-y-3 mt-10">
             {
-              menuItems.map( (item) => (
+              menuItems.map( item => (
                 <MenuItem
                   key={item.id}
                   item={item}
                   addItem={addItem}
                 />
               ))
-            }
-            
+            }            
           </div>       
         </div>  
 
@@ -34,12 +34,16 @@ function App() {
           < OrderContest 
             order={order}
             removeItem={removeItem}
-            
-            
+          />
+
+          < TipPercentageForm 
+            setTip={setTip}
 
           />
 
-          < OrderTotals />
+          < OrderTotals 
+            order={order}
+          />
         </div>
 
         <div>

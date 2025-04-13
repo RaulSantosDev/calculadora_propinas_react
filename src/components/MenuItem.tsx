@@ -16,5 +16,6 @@ export default function MuneItem({item, addItem} : MenuItemProps){
       <p className="font-black">${item.price}</p>
     </button>  
     
+    
   )
 }

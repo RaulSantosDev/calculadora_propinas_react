@@ -5,7 +5,8 @@ export const menuItems : MenuItem[] = [
     {
       "id": 1,
       "name": "Pizza a la Leña Chica",
-      "price": 30
+      "price": 30,
+      
     },
     {
       "id": 2,
@@ -61,5 +62,10 @@ export const menuItems : MenuItem[] = [
       "id": 12,
       "name": "Café Capuchino",
       "price": 40
+    },
+    {
+      "id": 13,
+      "name": "Café Moka",
+      "price": 90
     }
 ]
