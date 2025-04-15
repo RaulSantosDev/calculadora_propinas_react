@@ -62,6 +62,9 @@ function App() {
 
       </main>
 
+      <footer className="bg-emerald-600 text-center py-3 ">
+        <small className="text-white font-bold">Developed and designed by Raymundo Santos ©2025. All rights reserved.</small>
+      </footer>
       
     </>
   )
