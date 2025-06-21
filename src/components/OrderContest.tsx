@@ -1,11 +1,12 @@
-import { OrderItem, MenuItem } from '../types'
+import { OrderActions } from '../reducer/order-reducer'
+import { OrderItem } from '../types'
 
 type OrderContestProps = {
     order: OrderItem[]
-    removeItem: (id : MenuItem["id"]) => void
+    dispatch: React.ActionDispatch<[action: OrderActions]>
   }
 
-const OrderContest = ({order, removeItem} : OrderContestProps) => {
+const OrderContest = ({order, dispatch} : OrderContestProps) => {
   return (
     <div>
       <h1 className="text-center font-black text-4xl">Consumo</h1>
@@ -25,7 +26,7 @@ const OrderContest = ({order, removeItem} : OrderContestProps) => {
 
                       <button 
                         className="bg-red-700 w-8 h-8 rounded-full font-black text-white cursor-pointer"
-                        onClick={() => removeItem(item.id)}
+                        onClick={() => dispatch({type: "remove-item", payload: {id: item.id} })}
                       >
                           X
                       </button>
