@@ -8,7 +8,7 @@ import { useReducer } from "react"
 
 function App() {
   
-  const [ state, dispatch]= useReducer(orderReducer, initialState)
+  const [ state, dispatch] = useReducer(orderReducer, initialState)
  
   return (
     <>
